@@ -10,7 +10,7 @@ of in Gitpod (gitpod is zonder mailen van orders en zonder permanent hosten):
 - *wat je verkoopt*
 ### Deze webshop is gemaakt door: 
 - *naam van leerling 1* 
--  *naam van leerling 2*
+-  *naam van leerling 2c*
 
 # Mijn aanpak
 Werk de planning af van boven naar beneden<br>
