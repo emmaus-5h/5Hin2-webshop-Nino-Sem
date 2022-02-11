@@ -14,7 +14,7 @@ footer {
 }
 
 .shop-button {
-  font-size: 15px;
+  font-size: 12x;
   margin-top: -4px;
 }
 
@@ -79,4 +79,9 @@ body {
 
 background-color: rgba(202, 200, 200, 0.829)
 
+}
+
+.navbar-brand {
+  font-family: monospace;
+  margin-left: 800px;
 }
