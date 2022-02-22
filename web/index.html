@@ -23,6 +23,7 @@
 		</div>
 	</div>
 
+ 
   <!-- menubalk -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#"> Music Shop</a>
@@ -41,22 +42,25 @@
 		</div>
 	</nav>
 
+
   <!-- lijst met producten, wordt gevuld door javascript -->
 	<main id="index">
 		<div class="container">
-      <br></br>
-			<p>Populairste Artikelen</p>
+			<h5>Artikelen</h5>
+			<p>Hier zijn alle instrumenten te vinden die je kan kopen.</p>
+			<p>Klik op een artikel voor meer informatie of filter om een overzicht te krijgen van één bepaald instrument.<p>
+					<p>Klik op het "winkelwagentje" om het artikel in je winkelwagen te stoppen</p>
 		</div>	
     <!-- template for product info-->
   	<template id="productcard">
 		<div class="col-sm">
 			<div class="card" onclick="openArticlePage(this)">
 				<h5 class="card-header product_title"></h5>
-				<img width="300" class="product_image card-img-top">
+				<img width="200" class="product_image card-img-top">
 				<div class="card-body">
 					<p class="product_description card-text"></p>
 					<ul class="product-properties">
-            
+            <li><span class="propert-name">Adviesprijs:</span><span class="product_adviesprijs"></span></li>
 						<li><span class="propert-name">Prijs:</span><span class="product_price"></span></li>
 						<li><span class="propert-name">Code:</span><span class="product_code"></span></li>
 					</ul>
@@ -122,6 +126,7 @@
               clone.querySelector(".product_title").textContent = name
               clone.querySelector(".product_description").textContent =`${product.description.substr(0, 100)}...`
               clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
+              clone.querySelector(".product_adviesprijs").textContent = `€ ${product.adviesprijs.toFixed(2)}`
               clone.querySelector(".product_code").textContent = product.code
               clone.querySelector(".product_id").value = product.id
               clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
