@@ -41,11 +41,11 @@ CREATE TABLE products (
 --
 
 insert into products (name, description, artikelcode, price, adviesprijs) values ('Piano Yamaha P-127', 'Yamaha P-125 is de opvolger van de succesvolle Yamaha P-115, deze piano komt met nieuwe functies zoals drumtracks, vleugelklanken en nog meer.', '100435', 849.99, 950);
-insert into products (name, description, artikelcode, price, adviesprijs) values ('Ibanez Guitar', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '077030122-3', 150, 230);
-insert into products (name, description, artikelcode, price, adviesprijs) values ('Fender Guitar', 'Pellentesque at nulla. Suspendisse potenti.', '445924201-X', 350, 400);
-insert into products (name, description, artikelcode, price, adviesprijs) values ('Devine PRO Koptelefoon', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '693155505-7', 40, 60);
-insert into products (name, description, artikelcode, price, adviesprijs) values ('Yamaha Stage shellset Pure White Drum', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '686928463-6', 780, 900);
-insert into products (name, description, artikelcode, price, adviesprijs) values ('Fazley elektrische basgitaar rood', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '492662523-7', 80, 110);
+insert into products (name, description, artikelcode, price, adviesprijs) values ('Ibanez Guitar', 'Ibanez houten elektrische Guitar', '077030122-3', 150, 230);
+insert into products (name, description, artikelcode, price, adviesprijs) values ('Fender Guitar', 'Ibanez Fender Guitar, elektrisch', '445924201-X', 350, 400);
+insert into products (name, description, artikelcode, price, adviesprijs) values ('Devine PRO Koptelefoon', 'Bluetooth headphone', '693155505-7', 40, 60);
+insert into products (name, description, artikelcode, price, adviesprijs) values ('Yamaha Stage shellset Pure White Drum', 'Volledig drumstel', '686928463-6', 780, 900);
+insert into products (name, description, artikelcode, price, adviesprijs) values ('Fazley elektrische basgitaar rood', 'Basgitaar Rood', '492662523-7', 80, 110);
 
 insert into winkels (winkelcode,name) values ('ROT', 'Rotterdam');
 insert into winkels (winkelcode,name) values ('UTR','Utrecht');
