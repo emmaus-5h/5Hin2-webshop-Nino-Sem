@@ -45,7 +45,16 @@ insert into products (name, description, artikelcode, price, adviesprijs) values
 insert into products (name, description, artikelcode, price, adviesprijs) values ('Fender Guitar', 'Ibanez Fender Guitar, elektrisch', '445924201-X', 350, 400);
 insert into products (name, description, artikelcode, price, adviesprijs) values ('Devine PRO Koptelefoon', 'Bluetooth headphone', '693155505-7', 40, 60);
 insert into products (name, description, artikelcode, price, adviesprijs) values ('Yamaha Stage shellset Pure White Drum', 'Volledig drumstel', '686928463-6', 780, 900);
+
 insert into products (name, description, artikelcode, price, adviesprijs) values ('Fazley elektrische basgitaar rood', 'Basgitaar Rood', '492662523-7', 80, 110);
+
+insert into products (name, description, artikelcode, price, adviesprijs) values ('test 1', 'test 1', '492662523-7', 80, 110);
+
+insert into products (name, description, artikelcode, price, adviesprijs) values ('test 2', 'test 2', '492662523-7', 80, 110);
+
+insert into products (name, description, artikelcode, price, adviesprijs) values ('test 3', 'test 3', '492662523-7', 80, 110);
+
+insert into products (name, description, artikelcode, price, adviesprijs) values ('test 4', 'test 4', '492662523-7', 80, 110);
 
 insert into winkels (winkelcode,name) values ('ROT', 'Rotterdam');
 insert into winkels (winkelcode,name) values ('UTR','Utrecht');
