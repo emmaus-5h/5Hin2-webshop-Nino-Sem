@@ -19,22 +19,22 @@ Geef aan met [x] welke onderdelen af zijn
 Stap 1: Start 
 - [X] Pas de achtergrondkleur van de shop aan (zie mapje web)
 - [X] Pas de titel van het eerste product in de shop aan (zie mapje db)
-- [ ] Pas de query aan zodat getoonde producten gesorteerd worden op naam (zie mapje api)
+- [X] Pas de query aan zodat getoonde producten gesorteerd worden op naam (zie mapje api)
 
 Stap 2: Database opzetten 
-- [ ] Maak tabellen en velden (CREATE TABLE commando) in je database waarin alle informatie kan worden opgeslagen die je over je producten wilt tonen.<br>
+- [X] Maak tabellen en velden (CREATE TABLE commando) in je database waarin alle informatie kan worden opgeslagen die je over je producten wilt tonen.<br>
 Tip: je kunt een multipliciteitendiagram gebruiken als tussenstap voor je database-ontwerp
-- [ ] Vul de tabellen met informatie (INSERT commando)
-- [ ] Voeg eventueel plaatjes toe (web/images map)
+- [X] Vul de tabellen met informatie (INSERT commando)
+- [X] Voeg eventueel plaatjes toe (web/images map)
 
 Stap 3: API aanpassen 
-- [ ] Pas de API aan, zodat je alle informatie uit je database kunt opvragen via de API
+- [X] Pas de API aan, zodat je alle informatie uit je database kunt opvragen via de API
 
 Stap 4: Website aanpassen 
-- [ ] Pas de website aan, zodat alle informatie getoond wordt.
+- [X] Pas de website aan, zodat alle informatie getoond wordt.
 
 Stap x: Webshop verder verbeteren
-- [ ] Herhaal stap 2 t/m 4 om je webshop verder te verbeteren. 
+- [X] Herhaal stap 2 t/m 4 om je webshop verder te verbeteren. 
 Voor en goed cijfer is het belangrijk dat je laat zien dat je uitstekend begrepen hebt hoe je een webshop moet opzetten.
 
 
