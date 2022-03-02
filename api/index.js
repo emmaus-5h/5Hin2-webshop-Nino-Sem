@@ -31,6 +31,8 @@ app.get('/api/products', getProducts)
 app.get('/api/products/:id', getProductById)
 app.get('/api/products/:id', getProductById)
 app.get('/api/productswinkel/:id', getProductWinkelById)
+//app.get('/api/productswinkel/:id', db.getProductWinkelById)
+//app.get('/api/productswinkel/:id', getProductById)
 //app.get('/api/products/:id/related', db.getRelatedProductsById)
 // our API is not protected...so let's not expose these
 // app.post('/api/products', createProduct)
@@ -86,14 +88,32 @@ function getProductById(request, response) {
 }
 
 function getProductWinkelById(request, response) {
-  console.log('API ontvangt /api/products/:id', request.query)
+  const id = parseInt(request.params.id)
+  console.log('API ontvangt /api/productswinkel/:id', request.query)
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT winkels.name AS name, voorraad.name FROM products JOIN artikel_winkel ON products.artikelcode = Artikel_winkel.artikelcode JOIN winkels ON winkels.winkelcode = Artikel_winkel.winkelcode JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE product.id = ?')
+  const sqlOpdracht = db.prepare('SELECT winkels.name AS name, voorraad.name FROM products JOIN artikel_winkel ON products.artikelcode = Artikel_winkel.artikelcode JOIN winkels ON winkels.winkelcode = Artikel_winkel.winkelcode JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE products.id = $1', [id])
   data = sqlOpdracht.all(product_id)
-  response.status(200).json(data[0])
+  //response.status(200).json(data[0])
+  response.status(200).json(results.rows)
 }
 
+/*
+const getProductWinkelById = (request, response) => {
+  const id = parseInt(request.params.id)
+  // TODO: change query to return related products
+  // it now return an array with the current products
+  pool.query('SELECT winkels.name AS name, voorraad.name FROM products JOIN artikel_winkel ON products.artikelcode = Artikel_winkel.artikelcode JOIN winkels ON winkels.winkelcode = Artikel_winkel.winkelcode JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE products.id = $1', [id], (error, results) => {
+    if (error) {
+      console.log(error)
+      response.status(500).json("oops")
+    } else {
+      response.status(200).json(results.rows)
+    }
+  })
+  return callback(err,result)
+}
+*/
 
 /*
 const getRelatedProductsById = (request, response) => {
@@ -109,6 +129,7 @@ const getRelatedProductsById = (request, response) => {
     }
   })
 }
+
 const createProduct = (request, response) => {
   const { name, email } = request.body
   pool.query('INSERT INTO products (name, email) VALUES ($1, $2)', [name, email], (error, _results) => {

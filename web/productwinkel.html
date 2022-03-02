@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <a href="productwinkel.html"></a>
-      <button>Klik hier om de voorraad te zien</button>
-    
     <div class="toast" data-delay="2000">
       <div class="toast-header">
         <strong class="mr-auto">Product toegevoegd</strong>
@@ -38,15 +35,17 @@
     </main>
     <footer>
       <hr>
-       <p>Het maken van deze website is een opdracht voor het vak informatica op het Emmauscollege Rotterdam.</p>
+       <p>Het maken van deze website is een opdracht voor het vak informatica op het Emmauscollege Rotterdam..</p>
    </footer>
     <!-- template for product info-->
         <template id="productcard">
-
       <div class="col-sm">
         <div style="display: flex; justify-content: space-beteen;">
           <h5 syle="display: inline-block"><a href="/index.html">Artikelen</a>&nbsp;&gt;&nbsp;</h5><h5 class="product_title"></h5>
         </div>
+        <a href="productwinkel.html?productId=1">
+      <button class="voorraadknop"> Klik hier om de voorraad te zien</button>
+    </a>
         <div class="card product">
           <h5 class="card-header product_title"></h5>
           <img width="200" class="product_image">
@@ -68,7 +67,12 @@
     <script src="/js/basket.js"></script>
     <script>
       (function() {
+        
+console.log("Waarde van productid is ...")
+        
+
         const template = document.querySelector('#productcard');
+        //const app = document.getProductWinkelById('index')
         const app = document.getElementById('index')
         
         updateBasket()
@@ -80,21 +84,26 @@
 
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('productId');
-
+        
+console.log("Waarde van productid is ", productId)
+        
         var request = new XMLHttpRequest()
-        request.open('GET', `/api/products/${productId}`, true)
+        request.open('GET', '/api/productswinkel/${productId}`, true)
+        //request.open('GET', '/api/products/$/related{productId}`, true)
+        
+        //request.onload = const() {  //function () {
         request.onload = function () {
             var product = JSON.parse(this.response)
             if (request.status >= 200 && request.status < 400) {
                 const clone = template.content.cloneNode(true);
-                clone.querySelector(".product_title").textContent += product.name
-                clone.querySelector(".product_description").textContent = product.description
-                clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
-              clone.querySelector(".product_adviesprijs").textContent = `€ ${product.price.toFixed(2)}`
-                clone.querySelector(".product_code").textContent = product.code
-                clone.querySelector(".product_id").value = product.id
-                clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
-                clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
+                clone.querySelector(".product_title").textContent += winkels.name
+                //clone.querySelector(".product_description").textContent = product.description
+                //clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
+              //clone.querySelector(".product_adviesprijs").textContent = `€ ${product.price.toFixed(2)}`
+                //clone.querySelector(".product_code").textContent = product.code
+                //clone.querySelector(".product_id").value = product.id
+                //clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
+                //clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
 
                 container.appendChild(clone)
             } else {
