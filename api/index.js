@@ -71,7 +71,7 @@ function getCategories(request, response) {
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.artikelcode AS code, products.price AS price, products.adviesprijs AS adviesprijs, products.gewicht AS gewicht FROM products ORDER BY id ASC')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.artikelcode AS code, products.price AS price, products.adviesprijs AS adviesprijs, products.gewicht AS gewicht, productgroepen.name AS productgroep FROM products left join productgroepen on productgroepen.id = products.productgroep_id ORDER BY products.id ASC')
   data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
@@ -82,7 +82,7 @@ function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id', request.query)
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.artikelcode AS code, products.price AS price, products.adviesprijs AS adviesprijs, products.gewicht AS gewicht FROM products WHERE id = ?')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.artikelcode AS code, products.price AS price, products.adviesprijs AS adviesprijs, products.gewicht AS gewicht, (SELECT voorraad.name FROM artikel_winkel JOIN winkels ON winkels.id = Artikel_winkel.winkel_id JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE artikel_winkel.product_id = products.id and winkels.id = 1) AS voorraadrotterdam, (SELECT voorraad.name FROM artikel_winkel JOIN winkels ON winkels.id = Artikel_winkel.winkel_id JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE artikel_winkel.product_id = products.id and winkels.id = 2) AS voorraadutrecht FROM products WHERE id = ?')
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
 }
@@ -92,8 +92,8 @@ function getProductWinkelById(request, response) {
   console.log('API ontvangt /api/productswinkel/:id', request.query)
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT winkels.name AS name, voorraad.name FROM products JOIN artikel_winkel ON products.artikelcode = Artikel_winkel.artikelcode JOIN winkels ON winkels.winkelcode = Artikel_winkel.winkelcode JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE products.id = $1', [id])
-  data = sqlOpdracht.all(product_id)
+  const sqlOpdracht2 = db.prepare('SELECT winkels.name AS name, voorraad.name FROM products JOIN artikel_winkel ON products.id = Artikel_winkel.product_id JOIN winkels ON winkels.id = Artikel_winkel.winkel_id JOIN voorraad ON voorraad.artikel_winkel_id = Artikel_winkel.id WHERE products.id = $1', [id])
+  data = sqlOpdracht2.all(product_id)
   //response.status(200).json(data[0])
   response.status(200).json(results.rows)
 }

@@ -10,7 +10,8 @@ CREATE TABLE products (
   price NUMERIC(10, 2),
   adviesprijs NUMERIC (10, 2),
   gewicht VARCHAR (255),
-  voorraad_id INTEGER
+  voorraad_id INTEGER,
+  Productgroep_id Integer
 );
 
   CREATE TABLE winkels (
@@ -22,9 +23,9 @@ CREATE TABLE products (
 
   CREATE TABLE artikel_winkel (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  artikelcode varchar(15),
-  winkelcode varchar(15)
-  );
+  product_id varchar(15),
+  winkel_id varchar(15)
+);
 
   CREATE TABLE voorraad (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,6 +33,13 @@ CREATE TABLE products (
   artikel_winkel_id INTEGER,
   voorraad TEXT
 );
+
+  CREATE TABLE productgroepen (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+  
 --
 -- populate with data
 --
@@ -41,9 +49,15 @@ CREATE TABLE products (
 -- want different data? check: https://www.mockaroo.com/910b6c20
 --
 
-insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Piano Yamaha P-127', 'Yamaha P-125 is de opvolger van de succesvolle Yamaha P-115, deze piano komt met nieuwe functies zoals drumtracks, vleugelklanken en nog meer.', '100435', 849.99, 950, '16 kg');
-insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Ibanez Guitar', 'Ibanez houten elektrische Guitar', '077030122-3', 150, 230, '3.9 kg');
-insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Fender Guitar', 'Ibanez Fender Guitar, elektrisch', '445924201-X', 350, 400, '15 kg');
+insert into productgroepen (name) values ('Gitaar');
+insert into productgroepen (name) values ('Piano');
+insert into productgroepen (name) values ('Koptelefoon');
+insert into productgroepen (name) values ('Drumstel');
+
+  
+insert into products (name, description, artikelcode, price, adviesprijs, gewicht, productgroep_id) values ('Piano Yamaha P-127', 'Yamaha P-125 is de opvolger van de succesvolle Yamaha P-115, deze piano komt met nieuwe functies zoals drumtracks, vleugelklanken en nog meer.', '100435', 849.99, 950, '16 kg',1);
+insert into products (name, description, artikelcode, price, adviesprijs, gewicht, productgroep_id) values ('Ibanez Guitar', 'Ibanez houten elektrische Guitar', '077030122-3', 150, 230, '3.9 kg',1);
+insert into products (name, description, artikelcode, price, adviesprijs, gewicht, productgroep_id) values ('Fender Guitar', 'Ibanez Fender Guitar, elektrisch', '445924201-X', 350, 400, '15 kg',1);
 insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Devine PRO Koptelefoon', 'Bluetooth headphone', '693155505-7', 40, 60, '1.1');
 insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Yamaha Stage shellset Pure White Drum', 'Volledig drumstel', '686928463-6', 780, 900, '50 kg');
 
@@ -63,13 +77,13 @@ insert into winkels (winkelcode,name) values ('AMS', 'Amsterdam');
 insert into winkels (winkelcode,name) values ('GR', 'Groningen');
 insert into winkels (winkelcode,name) values ('LIM','Limburg');
 
-insert into artikel_winkel (artikelcode, winkelcode) values ('100435','ROT');
-insert into artikel_winkel (artikelcode, winkelcode) values ('100435','UTR');
-insert into artikel_winkel (artikelcode, winkelcode) values ('077030122-3','AMS');
-insert into artikel_winkel (artikelcode, winkelcode) values ('077030122-3', 'LIM');
+insert into artikel_winkel (product_id, winkel_id) values (1,1);
+insert into artikel_winkel (product_id, winkel_id) values (1,2);
+insert into artikel_winkel (product_id, winkel_id) values (2,1);
+insert into artikel_winkel (product_id, winkel_id) values (3,3);
 
   
 insert into voorraad (artikel_winkel_id ,name) values (1,'ja');
 insert into voorraad (artikel_winkel_id ,name) values (2,'nee');
-insert into voorraad (artikel_winkel_id ,name) values (3,'binnekort');
-insert into voorraad (artikel_winkel_id ,name) values (4,'binnekort');
+insert into voorraad (artikel_winkel_id ,name) values (3,'binnenkort');
+insert into voorraad (artikel_winkel_id ,name) values (4,'binnenkort');
