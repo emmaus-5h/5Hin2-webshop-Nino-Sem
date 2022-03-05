@@ -50,11 +50,11 @@ footer {
 }
 
 .card-header {
-  height: 5em;
+  height: 6em;
 }
 
 .card-text {
-  min-height: 10em
+  min-height: 15em
 }
 
 /* index page */
@@ -91,6 +91,14 @@ footer {
   font-size: 15px
 }
 
+.product-propertie {
+  margin-top:20px;
+  list-style: none; 
+  padding-left: 5px; 
+  font-size: 15px;
+  text-align: center;
+}
+
 .product_row  .product-properties  li {
   width: 25%;
   float: left;
@@ -102,33 +110,33 @@ background-color: rgb(206, 214, 224);
 
 .navbar-brand {
   font-family: monospace;
-  margin-left: 800px;
+ /* margin-left: 800px; */
 }
 
 .product_adviesprijs {
   font-size: 12px;
   text-decoration: line-through;
   color: red; 
-  margin-right: 750px;
 }
 
 .propert-adviesprijs {
   font-size: 12px;
   color: red; 
+  text-align: center; 
 }
 
+.propert-price {
+  color: green;
+}
 
 .product_price {
   color: green;
-
+  font-weight: bold;  
 }
 
 
 .propert-voorraad {
   font-weight: bold;
-  margin-left: 850px;
+
 }
 
-.propert-winkels {
-  margin-left: 850px; 
-}

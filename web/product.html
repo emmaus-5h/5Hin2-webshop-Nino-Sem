@@ -38,7 +38,7 @@
     </main>
     <footer>
       <hr>
-       <p>Het maken van deze website is een opdracht voor het vak informatica op het Emmauscollege Rotterdam.</p>
+       <p>Music Shop</p>
    </footer>
     <!-- template for product info-->
         <template id="productcard">
@@ -52,16 +52,18 @@
           <img width="200" class="product_image">
           <div class="card-body">
             <p class="product_description card-text"></p>
-            <ul class="product-properties">
-              <li><span class="propert-name">Adviesprijs: </span><span class="product_adviesprijs"></span></li>
+            <ul class="product-propertie">
+              
+              <li><span class="propert-voorraad"> Op voorraad: </span>
+<li><span class="propert-winkels"> In Rotterdam: </span><span class="product_voorraadrotterdam"></span></li>
+              <li><span class="propert-winkels"> In Utrecht: </span><span class="product_voorraadutrecht"></span></li>
+              <li><span class="propert-winkels"> In Amsterdam: </span><span class="product_voorraadamsterdam"></span></li>
+              <br></br>
+              <li><span class="propert-adviesprijs">Adviesprijs: </span><span class="product_adviesprijs"></span></li>
             <li><span class="propert-price">Prijs: </span><span class="product_price"></span></li>
-            <li><span class="propert-name">Code:</span><span class="product_code"></span></li>
+            <li><span class="propert-name">Artikelnummer: </span><span class="product_code"></span></li>
               <li><span class="propert-name">Gewicht: </span><span class="product_gewicht"></span></li>
 
-<br></br>  
-              <li><span class="propert-voorraad"> Voorraad: </span>
-<li><span class="propert-winkels"> Rotterdam: </span><span class="product_voorraadrotterdam"></span></li>
-              <li><span class="propert-winkels"> Utrecht: </span><span class="product_voorraadutrecht"></span></li>
             </ul>
             <input class="product_amount" type="number" value="1" min="1">
             <input class="product_id" type="hidden" name="id" data-json="">
@@ -99,6 +101,7 @@
 
              clone.querySelector(".product_voorraadrotterdam").textContent = product.voorraadrotterdam 
              clone.querySelector(".product_voorraadutrecht").textContent = product.voorraadutrecht
+              clone.querySelector(".product_voorraadamsterdam").textContent = product.voorraadamsterdam
                
                
                 clone.querySelector(".product_code").textContent = product.code
