@@ -54,7 +54,7 @@ footer {
 }
 
 .card-text {
-  min-height: 15em
+  min-height: 14em
 }
 
 /* index page */
@@ -109,8 +109,11 @@ background-color: rgb(206, 214, 224);
 }
 
 .navbar-brand {
-  font-family: monospace;
- /* margin-left: 800px; */
+  font-family: caveat;
+  text-align: center;
+}
+.nav-link {
+  font-family: caveat;
 }
 
 .product_adviesprijs {
@@ -137,6 +140,12 @@ background-color: rgb(206, 214, 224);
 
 .propert-voorraad {
   font-weight: bold;
-
 }
 
+.propert-soort {
+  font-family: sans-serif ;
+}
+
+.product_productgroepen {
+  font-family: lobster;
+}
