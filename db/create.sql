@@ -69,7 +69,8 @@ insert into products (name, description, artikelcode, price, adviesprijs, gewich
 
 insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('Pioneer DDJ-400 + controller flightbag', 'De Pioneer DDJ-400 is al snel uitgegroeid tot één van de meest populaire controllers van dit moment. Het is de ideale tweekanaals controller om te leren draaien met zijn tutorial-functie. Hij was al compact en handzaam maar nu wordt hij geleverd inclusief de DJC-B/WEGO3+BAG. Dat is een zeer handige en stevige controller flightbag, speciaal ontworpen om passend te zijn voor de DDJ-400. Hij heeft een schouderband, waardoor het makkelijk is je controller van A naar B te vervoeren. Tevens beschermt hij de controller tegen stootschade en stof.', '845987458', 349, 360, '4.2 kg');
 
-insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('test 4', 'test 4', '492662523-7', 80, 110, '10 kg');
+insert into products (name, description, artikelcode, price, adviesprijs, gewicht) values ('
+Fenton SBS60 Bluetooth-speaker met LED-verlichting', 'De Fenton SBS60 is een 50W actieve fullrange 2 x 4 inch speaker. Zijn kleurige LED-strips, die om de grill van de speakers heen lopen, lichten op met de muziek die je er op afspeelt. Hij heeft een Aux- en een microfoon-ingang. Maar je kunt ook direct MP3', '492662523-7', 80, 110, '10 kg');
 
 insert into winkels (winkelcode,name) values ('ROT', 'Rotterdam');
 insert into winkels (winkelcode,name) values ('UTR','Utrecht');
