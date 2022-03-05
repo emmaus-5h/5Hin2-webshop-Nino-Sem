@@ -32,10 +32,12 @@ footer {
 .article-container {
   margin: auto;
 }
+
+/*
 .container {
   text-align: center;
 }
-
+*/
 .productscard {
    margin: auto; 
 }
@@ -52,7 +54,7 @@ footer {
 }
 
 .card-text {
-  min-height: 16em
+  min-height: 10em
 }
 
 /* index page */
@@ -70,7 +72,7 @@ footer {
 }
 
 .product > .card-header {
-  height:3em
+  height:2em
 }
 
 .product-properties > li > .property-name {
@@ -107,6 +109,7 @@ background-color: rgb(206, 214, 224);
   font-size: 12px;
   text-decoration: line-through;
   color: red; 
+  margin-right: 750px;
 }
 
 .propert-adviesprijs {
@@ -114,10 +117,18 @@ background-color: rgb(206, 214, 224);
   color: red; 
 }
 
-.propert-price {
-  color: green; 
-}
 
 .product_price {
   color: green;
+
+}
+
+
+.propert-voorraad {
+  font-weight: bold;
+  margin-left: 850px;
+}
+
+.propert-winkels {
+  margin-left: 850px; 
 }
