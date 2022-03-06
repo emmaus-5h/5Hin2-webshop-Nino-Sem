@@ -243,6 +243,25 @@ body {
   text-align: center; 
 }
 
+.deals {
+  border-style: solid;
+  text-shadow: 2px 2px;
+  /* border-radius: 25px; */
+  margin-left: 350px;
+  filter: drop-shadow(10px 10px 10px white);
+  display: inline-block;
+}
+
+.invite-cards {
+  border-style: solid;
+  text-shadow: 2px 2px;
+ /* border-radius: 25px; */
+  margin-left: 1000px;
+  margin-top: -365px;
+   filter: drop-shadow(10px 10px 10px white);
+  display: inline-block;
+}
+
 .propert-price {
   color: green;
 }
