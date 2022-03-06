@@ -27,6 +27,20 @@ footer {
 .shop-button {
   font-size: 12x;
   margin-top: -4px;
+  color: white;
+}
+
+.shop-button-winkel {
+  color: black;
+}
+
+.form-group {
+  color: white;
+}
+
+.form-group-korting {
+  color: white;
+  width: 200px;
 }
 
 .article-container {
@@ -35,8 +49,21 @@ footer {
 
 .simoco{
   font-family: lucida handwriting;
-  margin-left: 550px;
+  margin-left: 550px; 
   font-size: 50px;
+}
+
+.simocowinkel{
+  font-family: lucida handwriting;
+  font-size: 18px;
+  margin-left: 250px; 
+  font-size: 50px;
+}
+
+.nav-link {
+  font-family: caveat;
+  margin-left: 250px;
+  margin-top: 15px;
 }
 
 .logohome {
@@ -72,6 +99,11 @@ footer {
 
 .containerwinkel {
   text-align: center;
+  color: white;
+}
+
+
+.btn-outline-dark shop-button {
   color: white;
 }
 
@@ -137,7 +169,19 @@ footer {
 
 .product img {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+
+.product_image2 {
+  margin: auto;
+  margin-bottom: 50px;
+  width: 5%;
+  float: left;
+}
+
+.product_name {
+  margin: auto; 
+  margin-top: 10px;
 }
 
 .product > .card-header {
@@ -186,9 +230,6 @@ body {
   font-family: caveat;
   text-align: center;
 }
-.nav-link {
-  font-family: caveat;
-}
 
 .product_adviesprijs {
   font-size: 12px;
@@ -222,4 +263,8 @@ body {
 
 .product_productgroepen {
   font-family: lobster;
+}
+
+.sum_products {
+ font-weight: bold;
 }

@@ -10,7 +10,7 @@
 
 <style>
   body {
- background-image: url(images/winkel.jpg); 
+ background-image: url(images/Achtergrond.jpg); 
 background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +21,8 @@ background-size: cover;
   
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/">Shop</a>
+<a href="index.html">
+    <img src="images/logo.png" alt="SinoCo" width="80px" heigth="80px"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,6 +31,7 @@ background-size: cover;
           <li class="nav-item active">
             <a class="nav-link" href="index2.html">Artikelen</a>
           </li>
+                  <h5 class="simocowinkel"> Simo&Co </h5>
         </ul>
         <a href="basket.html"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Winkelwagen <span class="num_products"></span></button></a>
       </div>
@@ -37,10 +39,10 @@ background-size: cover;
 
     <main>
         <!-- inhoud winkelwagen -->
-        <div class="container" class="containerwinkel" id="index">
-          <h4>Winkelwagen</h4>
-          <p>Hier zie je de lijst met artikelen uit je winkelwagen.</p>
-          <p>Door op plus en min te drukken kun je het aantal per artikel aanpassen</p>   
+        <div class="container" id="index">
+          <h4 class="containerwinkel">Winkelwagen</h4>
+          <p class="containerwinkel">Let op: de artikelen in je winkelwagen zijn nog niet gereserveerd. Klik op 'Bestellen' om je aankoop te voltooien.</p> 
+          <p class="containerwinkel">Als de producten online momenteel niet op voorraad zijn zal de bezorging vertraging oplopen (tot 30 dagen).</p> 
           <!-- melding die wordt getoond als je winkelwagen leeg is -->
           <div id="show_when_empty_basket">
           <div class="alert alert-info" > 
@@ -51,14 +53,15 @@ background-size: cover;
           <template id="productrow">
           <div class="card product product_row">
             <div class="card-header">
-              <ximg class="product_image" width="30">
+           <!--   <img class="product_image2" width="30"> -->
               <span class="product_name"></span>
             </div>
+            <img class="product_image2" width="30"> 
             <div class="card-body">
               <ul class="product-properties">
-                <li><span class="propert-name">Id:</span><span class="product_id_show"></span></li>
-                <li><span class="propert-name">Prijs:</span><span class="product_price"></span></li>
-                <li><span class="propert-name">Aantal:</span><span class="product_amount_show"></span></li>
+                <li><span class="propert-name">Artikelnummer: </span><span class="product_code"></span></li>
+                <li><span class="propert-name">Prijs: </span><span class="product_price"></span></li>
+                <li><span class="propert-name">Aantal: </span><span class="product_amount_show"></span></li>
               </ul>
               <!-- input field needed as parameter for + and - -->
               <input class="product_amount" name="deltaAmount" value="1" type="hidden">
@@ -66,8 +69,8 @@ background-size: cover;
               <input class="product_id" name="productIds" data-json="" type="hidden">
               <!-- input field needed for checkout -->
               <input class="product_totalAmount" name="productAmounts" value="9" type="hidden">
-              <button class="btn btn-outline-dark shop-button" onClick="addAmountClosestToBasket(this, '.product_amount_show')">+</button>
-              <button class="btn btn-outline-dark shop-button" onClick="removeAmountClosestFromBasket(this, '.product_amount_show')">-</button>
+              <button class="btn btn-outline-dark shop-button-winkel" onClick="addAmountClosestToBasket(this, '.product_amount_show')">+</button>
+              <button class="btn btn-outline-dark shop-button-winkel" onClick="removeAmountClosestFromBasket(this, '.product_amount_show')">-</button>
               <button class="btn btn-outline-dark shop-button" onClick="if(confirm('Verwijder product?')) { removeClosestCompletelyFromBasket(this); setIfEmptyMsg() }">🗑</button>
             </div>
           </div>
@@ -75,17 +78,17 @@ background-size: cover;
         </div>
 
          <!-- totaal bedrag winkelwagen en knop voor Winkelwagen legen en knop voor Verder winkelen-->
-        <div class="container" id="totaal">
-            <p>Totaal bedrag: € <span class="sum_products">0.00</span></p>
+        <div class="containerwinkel" id="totaal">
+            <p><strong>Totaal bedrag: € </strong><span class="sum_products">0.00</span></p>
             <p>
               <button class="btn btn-outline-dark shop-button" onClick="if(confirm('Winkelwagen legen?')) { emptyBasket(); location.href='basket.html' }">Winkelwagen legen</button> <!-- beetje lomp om hele pagina opnieuw te laden na legen -->
-              <button class="btn btn-outline-dark shop-button" onClick="location.href='index2.html'">Verder winkelen</button>
+              <button class="btn btn-outline-dark shop-button" onClick="location.href='index2.html'">Verder winkelen ></button>
             </p>
         </div>
 
         <!-- bestelformulier -->
         <form class="container" id="orderForm">
-          <h4>Vul hieronder je adresgegevens in</h4>
+          <h4 class="containerwinkel">Vul hieronder je adresgegevens in</h4>
           <div class="form-group">
             <label for="naam">Naam</label>
               <input required
@@ -122,7 +125,7 @@ background-size: cover;
                    oninvalid="this.setCustomValidity('Woonplaats is verplicht')" 
                    onchange="this.setCustomValidity('')">
           </div>
-          <div>
+          <div class ="form-group">
             <label for="email">Email</label>
             <input required
                    class="form-control"
@@ -132,7 +135,7 @@ background-size: cover;
                    oninvalid="this.setCustomValidity('Geen geldig email adres opgegeven')" 
                    onchange="this.setCustomValidity('')">
           </div>
-          <div>
+          <div class = "form-group">
             <label for="phone">Mobiel</label>
             <input required 
                    class="form-control"
@@ -143,8 +146,19 @@ background-size: cover;
                    oninvalid="this.setCustomValidity('Geen geldig mobiel nummer opgegeven')" 
                    onchange="this.setCustomValidity('')">
           </div>
-          <p>...en klik op bestellen<p>
-          <p> Zodra het geld is overgemaakt wordt de bestelling verwerkt en zo snel mogelijk verstuurt.</p>
+
+        <div class = "form-group-korting">
+            <label for="kortingscode">Cadeaubond/Kortingscode invoeren</label>
+            <input unrequired 
+                   class="form-control"
+                   type="form-control" 
+                   name="kortingscode" 
+                   pattern="^\(?([+]31|0031|0)-?6(\s?|-)([0-9]\s{0,3}){8}$"
+                   oninvalid="this.setCustomValidity('Geen geldige code opgegeven')" 
+                   onchange="this.setCustomValidity('')">
+          </div>
+          
+          <p class="containerwinkel"> Zodra het geld is overgemaakt wordt de bestelling verwerkt en zo snel mogelijk verstuurt.</p>
           <button type="button" class="btn btn-outline-success shop-button" onclick="checkout()">Bestellen</button>
         </form>
         
@@ -202,14 +216,20 @@ background-size: cover;
           const amount = basket[id]
           const product = JSON.parse(localStorage.getItem(`item_${id}`))
           const clone = template.content.cloneNode(true)
-          clone.querySelector(".product_name").textContent = product.name
-          clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
-          clone.querySelector(".product_image").src =`images/${product.id}.jpg`
-          clone.querySelector(".product_amount_show").textContent = amount             
-          clone.querySelector(".product_id_show").textContent = product.id             
-          clone.querySelector(".product_id").value = product.id 
-          clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
-          //clone.querySelector(".product_amount").value = amount            
+clone.querySelector(".product_name").textContent = product.name
+          
+clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
+          
+clone.querySelector(".product_image2").src =`images/${product.id}.jpg`
+          
+clone.querySelector(".product_amount_show").textContent = amount             
+//clone.querySelector(".product_id_show").textContent = product.id             
+clone.querySelector(".product_id").value = product.id 
+          
+//clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
+           
+clone.querySelector(".product_code").textContent = product.code
+//clone.querySelector(".product_amount").value = amount            
           index.appendChild(clone)
         }
 
