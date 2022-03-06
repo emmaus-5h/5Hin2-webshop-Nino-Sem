@@ -48,6 +48,8 @@ footer {
 }
 
 .simoco{
+  text-decoration: none;
+  color: black;
   font-family: lucida handwriting;
   margin-left: 550px; 
   font-size: 50px;
@@ -254,11 +256,21 @@ body {
 
 .invite-cards {
   border-style: solid;
+  border-color: black;
   text-shadow: 2px 2px;
  /* border-radius: 25px; */
   margin-left: 1000px;
   margin-top: -365px;
    filter: drop-shadow(10px 10px 10px white);
+  display: inline-block;
+}
+
+.invite-cards-page {
+  border-style: solid;
+  border-color: black;
+  text-shadow: 2px 2px;
+  margin-left: 580px;
+  filter: drop-shadow(10px 10px 10px white);
   display: inline-block;
 }
 
