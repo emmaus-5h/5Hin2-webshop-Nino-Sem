@@ -59,6 +59,20 @@ footer {
   text-align: center;
 }
 
+.container2 {
+  text-align: center;
+  color: white;
+}
+
+.col-sm{
+  color: black;
+}
+
+.product_title {
+  color: white;
+}
+
+
 .productscard {
    margin: auto; 
 }
