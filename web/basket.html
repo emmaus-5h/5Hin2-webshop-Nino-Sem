@@ -8,6 +8,17 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
+<style>
+  body {
+ background-image: url(images/winkel.jpg); 
+background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+</style>
+
+  
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="/">Shop</a>
@@ -17,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Artikelen</a>
+            <a class="nav-link" href="index2.html">Artikelen</a>
           </li>
         </ul>
         <a href="basket.html"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Winkelwagen <span class="num_products"></span></button></a>
@@ -26,7 +37,7 @@
 
     <main>
         <!-- inhoud winkelwagen -->
-        <div class="container" id="index">
+        <div class="container" class="containerwinkel" id="index">
           <h4>Winkelwagen</h4>
           <p>Hier zie je de lijst met artikelen uit je winkelwagen.</p>
           <p>Door op plus en min te drukken kun je het aantal per artikel aanpassen</p>   
@@ -68,7 +79,7 @@
             <p>Totaal bedrag: € <span class="sum_products">0.00</span></p>
             <p>
               <button class="btn btn-outline-dark shop-button" onClick="if(confirm('Winkelwagen legen?')) { emptyBasket(); location.href='basket.html' }">Winkelwagen legen</button> <!-- beetje lomp om hele pagina opnieuw te laden na legen -->
-              <button class="btn btn-outline-dark shop-button" onClick="location.href='index.html'">Verder winkelen</button>
+              <button class="btn btn-outline-dark shop-button" onClick="location.href='index2.html'">Verder winkelen</button>
             </p>
         </div>
 
@@ -133,7 +144,7 @@
                    onchange="this.setCustomValidity('')">
           </div>
           <p>...en klik op bestellen<p>
-          <p>Als ik je bestelling gezien heb, dan ontvang je van mij een Tikkie. Zodra je betaald hebt, stuur ik de spullen op.</p>
+          <p> Zodra het geld is overgemaakt wordt de bestelling verwerkt en zo snel mogelijk verstuurt.</p>
           <button type="button" class="btn btn-outline-success shop-button" onclick="checkout()">Bestellen</button>
         </form>
         
@@ -147,7 +158,7 @@
              </template>
              <template id="checkout_failes">
                <div class="alert alert-danger">
-                 Je bestelling kon niet worden geplaatst, neem contact op met de shop<br>
+                 Je bestelling kon niet worden geplaatst, neem contact op met de Simo.Co.Verkoop@gmail.com<br>
                  Foutmelding:<br>
                  <span class="checkout_error_message"></span>
                </div>
@@ -157,7 +168,8 @@
     </main>
     <footer>
       <hr>
-      <p>Deze website is gemaakt door <naam leerling> voor het vak informatica op het Emmauscollege Rotterdam. Laatste bijgewerkt 1 oktober 2020.</p>
+      <p> Simo&Co </p>
+    </hr>
     </footer>
 
     <script src="/js/basket.js"></script>

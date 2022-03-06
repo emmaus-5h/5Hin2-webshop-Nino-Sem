@@ -33,7 +33,11 @@ footer {
   margin: auto;
 }
 
-
+.simoco{
+  font-family: lucida handwriting;
+  margin-left: 550px;
+  font-size: 50px;
+}
 
 .logohome {
   margin-top: 10px;
@@ -53,13 +57,20 @@ footer {
   margin-left: 0px;
   /* display: block; */
 }
-
+.card-header product_title {
+  color: black;
+}
 
 .container {
   text-align: center;
 }
 
 .container2 {
+  text-align: center;
+  color: white;
+}
+
+.containerwinkel {
   text-align: center;
   color: white;
 }
@@ -75,6 +86,7 @@ footer {
 
 .productscard {
    margin: auto; 
+   
 }
 
 .card {
@@ -86,6 +98,7 @@ footer {
 
 .card-header {
   height: 6em;
+  color: black;
 }
 
 .card-text {
@@ -94,21 +107,21 @@ footer {
 
 .buttonhome {
   background-color: rgb(233, 227, 206); /* Green */
-  font-family: monospace;
+  font-family: Angsana New;
   border-radius: 15px;
   color: black;
-  padding: 15px 32px;
+  padding: 14px 25px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.6s;
+  font-size: 25px;
+  transition-duration: 0.9s;
   text-decoration: none;
-  margin-left: 685px; 
+  margin-left: 710px; 
   margin-top: 300px;
 }
 
 .buttonhome:hover {
-  background-color: rgb(0, 0, 0); /* Green */
+  background-color: rgb(212, 175, 55); /* Green */
   color: white;
   text-decoration: none;
 }
